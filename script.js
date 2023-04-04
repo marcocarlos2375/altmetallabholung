@@ -13,3 +13,24 @@ items.addEventListener("click", function(){
    var y =items.getElementsByClassName("elementor-tab-content")[0]
    y.style.display="block";
 });
+
+
+var items = document.getElementsByClassName("elementor-toggle-item")
+for (let i = 0; i < items.length; i++) {
+  items[i].addEventListener("click", function (e) {
+    e.preventDefault()
+    var x = items[i].getElementsByClassName("elementor-tab-title")[0]
+    if (x.classList.length == 1) {
+      
+      x.classList.add("elementor-active")
+      var y = items[i].getElementsByClassName("elementor-tab-content")[0]
+      y.style.display = "block"
+    } else {
+      x.classList.remove("elementor-active")
+      var y = items[i].getElementsByClassName("elementor-tab-content")[0]
+      y.style.display = "none"
+    }
+
+  });
+
+} 
